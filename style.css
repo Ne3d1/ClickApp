@@ -1,0 +1,15 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
+#tap-area {
+  --bg: #ff4d4d;
+  --ink: #d93b3b;
+  position: fixed; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 0.02em;
+  background: var(--bg); color: var(--ink); cursor: pointer;
+  touch-action: manipulation; transition: background-color 350ms ease, color 350ms ease;
+}
+#score { font-size: clamp(5rem, 28vw, 18rem); font-weight: 900; line-height: .95; letter-spacing: -.07em; font-variant-numeric: tabular-nums; }
+#hint { margin-top: 1.5rem; font-size: clamp(.75rem, 3vw, 1.1rem); font-weight: 800; letter-spacing: .35em; opacity: .72; }
+@media (prefers-reduced-motion: reduce) { #tap-area { transition: none; } }
